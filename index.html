@@ -146,7 +146,7 @@
     <model-viewer 
     id="dimension-demo"                 
     ar 
-    ar-modes="scene-viewer"               
+    ar-modes="webxr"               
     ar-scale="fixed"                      
     camera-orbit="-30deg auto auto"         
     max-camera-orbit="auto 100deg auto"     
@@ -159,7 +159,7 @@
     <!--  
     id:
     ar:サポートされているデバイスでARエクスペリエンスを起動する機能を有効する。
-    ar-modes:AR関連
+    ar-modes:有効にするARエクスペリエンスのタイプの優先リスト。("webxr":Android,iOSの両方、"scene-viewer":Android、"quick-look":iOS)
     ar-scale:AR関連
     camera-orbit:カメラ関連
     max-camera-orbit:カメラ関連
@@ -177,6 +177,9 @@
     
 
     background-color:背景色を追加することができるみたい、でもここで入れても反映されない、場所が間違っている
+
+    参考
+    https://modelviewer.dev/docs/#entrydocs-augmentedreality-attributes-ar
     -->
 
 

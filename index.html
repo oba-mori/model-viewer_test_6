@@ -155,7 +155,7 @@
       src="./cube_small.glb"
       alt="A 3D model of an armchair."        
       style="width:800px;height:1000px;"
-    >  
+    >   
     <!--  
       id:
       ar:サポートされているデバイスでARエクスペリエンスを起動する機能を有効する。
@@ -213,13 +213,13 @@
         font-size: 16px;      /* フォントの大きさ */
         font-weight: 400;     /* フォントの太さ */
 
-        /*？*/
-        /*position: absolute;   /* custom-ar-buttonというidがついたボックスに下記(div id="custom-ar-button")の配置位置を反映 */
+        /*？ これがないと指定した位置ではなく、左上に配置される 理由は分からない*/
+        position: absolute;   /* custom-ar-buttonというidがついたボックスに下記(div id="custom-ar-button")の配置位置を反映 */
       
       }
     </style>
     
-    <!-- それぞれの説明は上に書いてある -->
+      <!-- それぞれの説明は上に書いてある -->
       <!-- 
         参考
         https://www.jyuko49.com/entry/2020/07/24/135155#AR%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B
@@ -228,21 +228,7 @@
         デフォルトのカメラ起動ボタンはそのまま表示させておいて、追加で表示領域の外にカメラ起動ボタンを作成することもできる
       -->
 
-      <!-- 
-      参考
-      position: absolute; /* controlsというidがついたボックスに下記(div id="controls")の配置位置を反映 */
-      bottom: 16px;       /* 下からの配置位置(距離)を指定(表示領域の最下端から) */
-      left: 16px;         /* 左からの配置位置(距離)を指定(表示領域の最左端から) */
-      max-width: unset;   /* 下記(div id="controls")で設定する内容が入る場所の幅の最大値を設定、最大値を設定すると内容の幅が一定範囲を超えない */
-      transform: unset;   /* 内容をボックスの中央に配置したりすることが出来る */
 
-      display: block; /* isplay:要素の表示のされ方、block:要素が横までいっぱいに広がり、縦に並んでいく(上から、下から) */
-      width: 12px;    /* 幅 */
-      height: 12px;   /* 高さ */
-      border-radius: 50%;         /* border-radius:ボックスの4つのコーナーの角丸をまとめて指定 → 〇のような図が作れる、50％:ボックスの辺の50％の半径の円を作成 → 円が出来る */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);  /* box-shadow:ボックスのフレーム周辺に影を作る */
-      background: #fff;         /* background:ボックスの背景色指定 */
-      --min-hotspot-opacity: 0;   /* HTML内の要素の不透明度を設定(0:完全に透明) */ -->
 
 
 

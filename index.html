@@ -146,7 +146,7 @@
     <model-viewer 
     id="dimension-demo"                 
     ar 
-    ar-modes="webxr"               
+    ar-modes="scene-viewer"               
     ar-scale="fixed"                      
     camera-orbit="-30deg auto auto"         
     max-camera-orbit="auto 100deg auto"     
@@ -158,7 +158,7 @@
     >  
     <!--  
     id:
-    ar:ARとして書いてますよ的な
+    ar:サポートされているデバイスでARエクスペリエンスを起動する機能を有効する。
     ar-modes:AR関連
     ar-scale:AR関連
     camera-orbit:カメラ関連
@@ -181,6 +181,8 @@
 
 
       <!--  -->
+      <!--  -->
+      <!-- button:クリックできるボタンを表す -->
 
       <button slot="hotspot-dot+X-Y+Z" class="dot" data-position="1 -1 1" data-normal="1 0 0"></button>
       <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
@@ -193,6 +195,9 @@
       <button slot="hotspot-dot-X-Y-Z" class="dot" data-position="-1 -1 -1" data-normal="-1 0 0"></button>
       <button slot="hotspot-dim-X-Y" class="dim" data-position="-1 -1 0" data-normal="-1 0 0"></button>
       <button slot="hotspot-dot-X-Y+Z" class="dot" data-position="-1 -1 1" data-normal="-1 0 0"></button>
+
+
+
 
       <!-- 左下の表示オブジェクトと寸法ONOFFを切り替えるボックスの内容　デザインは上の#controlsの所でやっている -->
       <div id="controls" class="dim">     <!-- id:controlsという名前のついたボックスを指定 -->

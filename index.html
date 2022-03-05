@@ -144,62 +144,100 @@
 
     <!-- model-viewer(html) -->
     <model-viewer 
-    id="dimension-demo"                 
-    ar 
-    ar-modes="webxr scene-viewer"               
-    ar-scale="fixed"                      
-    camera-orbit="-30deg auto auto"         
-    max-camera-orbit="auto 100deg auto"     
-    shadow-intensity="1"                          
-    camera-controls                         
-    src="./cube_small.glb"
-    alt="A 3D model of an armchair."        
-    style="width:800px;height:1000px;"
+      id="dimension-demo"                 
+      ar 
+      ar-modes="webxr quick-look"               
+      ar-scale="fixed"                      
+      camera-orbit="-30deg auto auto"         
+      max-camera-orbit="auto 100deg auto"     
+      shadow-intensity="1"                          
+      camera-controls                         
+      src="./cube_small.glb"
+      alt="A 3D model of an armchair."        
+      style="width:800px;height:1000px;"
     >  
     <!--  
-    id:
-    ar:サポートされているデバイスでARエクスペリエンスを起動する機能を有効する。
-    ar-modes:有効にするARエクスペリエンスのタイプの優先リスト。("webxr":Android,iOSの両方、"webxr scene-viewer":Android、"webxr quick-look":iOS)
-    ar-scale:AR関連
-    camera-orbit:カメラ関連
-    max-camera-orbit:カメラ関連
-    shadow-intensity:たぶん影の濃さ
-    camera-controls:カメラ自動で動く
-    src:(Android用)ページにアクセスした時、最初に表示するオブジェクト(オブジェクト選択の初期表示は他の場所で設定しているため、設定によっては表示オブジェクトと異なる場合がある)
-    
-    //合っているかは分からない
-    ios-src:(iOS用)内容は上記の src と同じ　
-    
-    alt:
+      id:
+      ar:サポートされているデバイスでARエクスペリエンスを起動する機能を有効する。
+      ar-modes:有効にするARエクスペリエンスのタイプの優先リスト。("webxr":Android,iOSの両方、"webxr scene-viewer":Android、"webxr quick-look":iOS)
+      ar-scale:AR関連
+      camera-orbit:カメラ関連
+      max-camera-orbit:カメラ関連
+      shadow-intensity:たぶん影の濃さ
+      camera-controls:カメラ自動で動く
+      src:(Android用)ページにアクセスした時、最初に表示するオブジェクト(オブジェクト選択の初期表示は他の場所で設定しているため、設定によっては表示オブジェクトと異なる場合がある)
+      
+      //合っているかは分からない
+      ios-src:(iOS用)内容は上記の src と同じ　
+      
+      alt:
 
-    styleは上記でも使用しているが、css要素
-    width:表示領域の幅, height:上記の高さ (オブジェクトだけではなく、選択肢、AR起動ボタン等、作成したもの全て)
-    
+      styleは上記でも使用しているが、css要素
+      width:表示領域の幅, height:上記の高さ (オブジェクトだけではなく、選択肢、AR起動ボタン等、作成したもの全て)
+      
 
-    background-color:背景色を追加することができるみたい、でもここで入れても反映されない、場所が間違っている
+      background-color:背景色を追加することができるみたい、でもここで入れても反映されない、場所が間違っている
 
-    参考
-    https://modelviewer.dev/docs/#entrydocs-augmentedreality-attributes-ar
+      参考
+      https://modelviewer.dev/docs/#entrydocs-augmentedreality-attributes-ar
     -->
 
 
 
     <!-- AR起動ボタンをカスタム -->
+    <!-- デフォルトで表示されている右下のカメラ起動ボタンを消して、新たにカメラ起動ボタンを作成 -->
     <button
-    slot="ar-button" 
-    style="background-color: white; 
-    border-radius: 4px;
-    border: none; 
-    position: absolute; 
-    top: 20px; 
-    right: 20px; "
+      id="custom-ar-button"
+      slot="ar-button" 
     >
-    カメラ起動ボタン
+      カメラ起動ボタン
     </button>
+    <style>     
+      #custom-ar-button
+      {
+        font-size: 24px;      /* フォントの大きさ */
+        position: absolute;   /* custom-ar-buttonというidがついたボックスに下記(div id="custom-ar-button")の配置位置を反映 */
+        bottom: 16px;         /* 下からの配置位置(距離)を指定(表示領域の最下端から) */
+        right: 16px;          /* 右からの配置位置(距離)を指定(表示領域の再右端から) */
 
 
+        /* background-color: white; 
+        border-radius: 4px;
+        border: none; 
+        position: absolute; 
+        top: 20px; 
+        right: 20px;  */
+      }
+    </style>
     
-      <!--  -->
+    <!-- それぞれの説明は上に書いてある -->
+      <!-- 
+        参考
+        https://www.jyuko49.com/entry/2020/07/24/135155#AR%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B
+        https://modelviewer.dev/examples/augmentedreality/#customButton
+
+        デフォルトのカメラ起動ボタンはそのまま表示させておいて、追加で表示領域の外にカメラ起動ボタンを作成することもできる
+      -->
+
+      <!-- 
+      参考
+      position: absolute; /* controlsというidがついたボックスに下記(div id="controls")の配置位置を反映 */
+      bottom: 16px;       /* 下からの配置位置(距離)を指定(表示領域の最下端から) */
+      left: 16px;         /* 左からの配置位置(距離)を指定(表示領域の最左端から) */
+      max-width: unset;   /* 下記(div id="controls")で設定する内容が入る場所の幅の最大値を設定、最大値を設定すると内容の幅が一定範囲を超えない */
+      transform: unset;   /* 内容をボックスの中央に配置したりすることが出来る */
+
+      display: block; /* isplay:要素の表示のされ方、block:要素が横までいっぱいに広がり、縦に並んでいく(上から、下から) */
+      width: 12px;    /* 幅 */
+      height: 12px;   /* 高さ */
+      border-radius: 50%;         /* border-radius:ボックスの4つのコーナーの角丸をまとめて指定 → 〇のような図が作れる、50％:ボックスの辺の50％の半径の円を作成 → 円が出来る */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);  /* box-shadow:ボックスのフレーム周辺に影を作る */
+      background: #fff;         /* background:ボックスの背景色指定 */
+      --min-hotspot-opacity: 0;   /* HTML内の要素の不透明度を設定(0:完全に透明) */ -->
+
+
+
+
       <!--  -->
       <!-- button:クリックできるボタンを表す -->
 

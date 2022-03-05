@@ -146,7 +146,7 @@
     <model-viewer 
       id="dimension-demo"                 
       ar 
-      ar-modes="webxr quick-look"               
+      ar-modes="webxr"               
       ar-scale="fixed"                      
       camera-orbit="-30deg auto auto"         
       max-camera-orbit="auto 100deg auto"     
@@ -200,13 +200,10 @@
         bottom: 16px;         /* 下からの配置位置(距離)を指定(表示領域の最下端から) */
         right: 16px;          /* 右からの配置位置(距離)を指定(表示領域の再右端から) */
 
-
-        /* background-color: white; 
-        border-radius: 4px;
-        border: none; 
-        position: absolute; 
-        top: 20px; 
-        right: 20px;  */
+        border-radius: 4px;   /* border-radius:ボックスの4つのコーナーの角丸をまとめて指定 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);  /* box-shadow:ボックスのフレーム周辺に影を作る */  
+        
+        /* background-color: white;  */
       }
     </style>
     
